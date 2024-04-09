@@ -98,9 +98,34 @@ print(len(c))
 '''
 '''
 a=[2,5,5,3,7,5,3,8,10,2,7,5,3]
+
 for i in range(len(a)):
-    for j in range(i+1):
+    b=True
+    for j in range(i+1,len(a)):
         if a[j]==a[i]:
+            b=False
             break
-    print(a[i], "comes", a.count(a[i]) )
+    if b:
+        print(a[i], "comes", a.count(a[i]) )
 '''
+a=[2,5,5,3,7,5,3,8,10,2,7,5,3]
+
+for i in range(len(a)):
+    b=True
+    for j in range(i+1,len(a)):
+        if a[j]==a[i]:
+            b=False
+            break
+    if b:
+        print(a[i], "comes", a.count(a[i]), "at " ,end="" )
+        ele_count=a.count(a[i])
+        
+        c=a.index(a[i])
+        while ele_count!=0:
+            
+            print(a.index(a[i],c,len(a))," " ,end="")
+            c=a.index(a[i],c,len(a))+1
+            ele_count=ele_count-1
+        print()
+        
+
